@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-|| Share A Swipe!
+|| Share A Swipe! - Become a Member
 {% endblock %}
 
 {% block style %}
@@ -59,31 +59,21 @@
 
 {% block content %}
 
-<div class="container py-4">
-
-  <div class="row align-items-md-stretch">
-    <div class="col-md-6">
-      <div class="h-100 p-5 bg-light border rounded-3">
-        <h2>View Weekly Allowance Balance</h2>
-        <p>
-          The number of free meal swipes/dining dollars you'll have access to this week.
-        </p>
-        <button class="btn btn-outline-secondary" type="button">View Balance</button>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="h-100 p-5 bg-light border rounded-3">
-        <h2>Claim swipes</h2>
-        <p>Transfer claimed meal swipes/dining dollars to your ID card</p>
-        <button class="btn btn-outline-secondary" type="button">Claim</button>
-      </div>
+<div class="px-4 py-5 my-5 text-center">
+  <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+  <h1 class="display-5 fw-bold">Become a Member</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Submit a request to enroll in the Share A Swipe! Program.
+      Your student profile will be submitted for review. If you are accepted, you will recieve
+      an email with next steps. You can always check your enrollment status <a href="/sas_status">here</a>.
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Become a Member</button>
     </div>
   </div>
-
-  <footer class="pt-3 mt-4 text-muted border-top">
-    &copy; 2022
-  </footer>
 </div>
+
 
 
 {% endblock %}

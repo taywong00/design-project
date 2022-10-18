@@ -64,11 +64,15 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      {% block style %}
+      <!-- Additional Page Styles-->
+      {% endblock %}
     </style>
 
     <!-- Custom styles for this template -->
     <link href="../static/css/blog.css" rel="stylesheet">
-
+    {% block stylesheets %}{% endblock %}
     <!-- Fonts and Icons -->
     <!-- None at this time -->
 
@@ -85,7 +89,7 @@
             <a class="link-secondary" href="#">Subscribe</a>
           </div>
           <div class="col-4 text-center">
-            <a class="blog-header-logo" href="#">
+            <a class="blog-header-logo" href="/">
               <img src="../static/images/logo.jpeg" alt="NYU Eats" width="30%" height="auto">
             </a>
           </div>
