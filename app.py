@@ -13,10 +13,20 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
-# Share A Swipe Main Page
+# Share A Swipe About Page
 @app.route("/sas_about")
-def home():
+def sas_about():
     return render_template("sas_about.html")
+
+# Share A Swipe Log In
+@app.route("/sas_login")
+def sas_login():
+    return redirect("/sas_home") # ignore login for now, assuming nyu mfa?
+
+# Share A Swipe Home
+@app.route("/sas_home")
+def sas_home():
+    return render_template("sas_home.html")
 
 
 if __name__ == "__main__":
