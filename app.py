@@ -21,8 +21,8 @@ def sas_about():
 # Share A Swipe Log In
 @app.route("/sas_login")
 def sas_login():
-    # return render_template("/sas_login.html")
-    return redirect("/sas_home") # ignore login for now, assuming nyu mfa?
+    return render_template("/sas_login.html")
+    # return redirect("/sas_home") # ignore login for now, assuming nyu mfa?
 
 # Share A Swipe Home
 @app.route("/sas_home")
@@ -38,6 +38,19 @@ def sas_register():
 @app.route("/sas_status")
 def sas_status():
     return render_template("sas_status.html")
+
+# Share A Swipe Status
+@app.route("/sas_balance")
+def sas_balance():
+    return render_template("sas_balance.html")
+
+#-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
+
+# Admin Home Dashboard
+@app.route("/admin_home")
+def admin_home():
+    return render_template("admin_home.html")
 
 
 if __name__ == "__main__":
