@@ -1,0 +1,81 @@
+{% extends "requestmeal/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+|| Share A Swipe! - Become a Member
+{% endblock %}
+
+{% block style %}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+{% endblock %}
+
+{% block content %}
+
+<div class="px-4 py-5 my-5 text-center">
+  <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+  <h1 class="display-5 fw-bold">Become a Member</h1>
+  {{ form|crispy }}
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Submit a request to enroll in the Share A Swipe! Program.
+      Your student profile will be submitted for review. If you are accepted, you will recieve
+      an email with next steps. You can always check your enrollment status <a href="/sas_status">here</a>.
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <button type="button" class="btn btn-primary btn-lg px-4 gap-3" href="{% url 'meal-menu'%}">Become a Member</button>
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'login'%}">Become a member</a>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
