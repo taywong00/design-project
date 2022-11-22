@@ -39,19 +39,43 @@ def sas_register():
 def sas_status():
     return render_template("sas_status.html")
 
+# # Share A Swipe Status
+# @app.route("/sas_balance")
+# def sas_balance():
+#     return render_template("sas_balance.html")
+
 # Share A Swipe Status
-@app.route("/sas_balance")
+@app.route("/sas_claim")
 def sas_balance():
-    return render_template("sas_balance.html")
+    return render_template("sas_claim.html")
 
 #-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------
+# Admin Login
+@app.route("/admin_login")
+def admin_login():
+    return render_template("admin_login.html")
 
 # Admin Home Dashboard
 @app.route("/admin_home")
 def admin_home():
     return render_template("admin_home.html")
 
+
+# Admin Home Dashboard
+@app.route("/admin_students")
+def admin_students():
+    return render_template("admin_students.html")
+
+# Admin Home Dashboard
+@app.route("/admin_requests")
+def admin_requests():
+    return render_template("admin_requests.html")
+
+# Admin Home Dashboard
+@app.route("/admin_accept")
+def admin_accept():
+    return render_template("admin_accept.html")
 
 if __name__ == "__main__":
     app.debug = True
