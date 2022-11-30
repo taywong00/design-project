@@ -1,7 +1,74 @@
+{% extends "requestmeal/base.html" %}
+
+{% block title %}
+|| Share A Swipe!
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
 {% block content %}
 
-<div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    main menu
+<div class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Welcome back to Share A Swipe!</h1>
+    </div>
+  </div>
+
+  <!-- <div class="starter-template"> -->
+    <div class="row align-items-md-stretch justify-content-start">
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <!-- use {{semester}} to fill in semester-->
+          <h2>Your Remaining Allowance Balance - Fall 2022</h2>
+          <!-- <br> -->
+          <p>This is the total number of donated meal swipes and
+            dining dollars that you have for the remainder of the semester.
+          </p>
+          <br>
+          <div style='text-align: center'>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Meal Swipes</th>
+                    <th scope="col">Dining Dollars</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
+                    {% for student in the_student %}                           
+                    <td>  {{student.MSallotment}} </td>
+                    <td>  {{student.DDallotment}}</td>
+                    {% endfor %}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 align-middle">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>Claim Allowance</h2>
+          <p>Claim your donated meal swipes and dining dollar by
+            transfering them to your NYU ID card.
+          </p>
+          <br>
+          <!-- <button class="btn btn-outline-secondary btn-lg" type="button">Claim</button> -->
+          {% for student in the_student %}
+          <a href="{% url 'meal-claim'%}" class="btn btn-outline-secondary btn-lg {% if student.access != 2 %}disabled {% endif %}" role="button">Claim</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-{% endblock content %}
+
+{% endblock %}

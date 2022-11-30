@@ -1,0 +1,217 @@
+{% extends "requestmeal/base.html" %}
+
+{% block title %}
+|| Welcome
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Share a Swipe! Manager</h1>
+      <p class="lead my-3">
+        Manage student program enrollment, assign donation allowances, and view
+        data analyses and program statistics.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'meal-adminpage'%}">
+              <span data-feather="home" class="align-text-bottom"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'meal-requestlist'%}">
+              <span data-feather="file" class="align-text-bottom"></span>
+              <!-- fill in with jinja count of number of requests-->
+              Requests
+              <span class="badge bg-danger rounded-pill">{{ num }}</span>
+
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              Products
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'meal-studentlist'%}">
+              <span data-feather="users" class="align-text-bottom"></span>
+              Students
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              Reports
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers" class="align-text-bottom"></span>
+              Integrations
+            </a>
+          </li> -->
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle" class="align-text-bottom"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text" class="align-text-bottom"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Manage Students</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <!-- fill in with jinja count of number of requests-->
+            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Pending Requests (19)</button> -->
+            <a type="button" class="btn btn-sm btn-outline-secondary" href="{% url 'meal-requestlist'%}">Pending Requests ({{num}})</a>
+          </div>
+
+          <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar" class="align-text-bottom"></span>
+            This week
+          </button> -->
+        </div>
+      </div>
+
+
+
+
+      <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Action
+          </a>
+          <a class="dropdown-item" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Action
+          </a>
+          <a class="dropdown-item" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Action
+          </a>
+        </div>
+      </div> -->
+
+
+
+      <!-- fill in with template database data -->
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">NetID</th>
+              <th scope="col">Semester</th>
+              <th scope="col">Status</th>
+              <th scope="col">Meal Swipe Allowance</th>
+              <th scope="col">Dining Dollars Allowance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in list %}
+            {% if student.access == 0 %}
+            <tr class="table-danger">
+              <td>{{student.SID}}</td>
+              <td>Fall 2022</td>
+              <td>Denied</td>
+              <td>{{ student.MSallotment }}</td>
+              <td>${{ student.DDallotment }}</td>
+            </tr>
+            {% elif student.access == 1 %}
+            <tr class="table-warning">
+                <td>{{student.SID}}</td>
+                <td>Fall 2022</td>
+                <td>Pending</td>
+                <td>{{ student.MSallotment }}</td>
+                <td>${{ student.DDallotment }}</td>
+            </tr>
+            {% elif student.access == 2 %}
+            <tr class="table-success">
+                <td>{{student.SID}}</td>
+                <td>Fall 2022</td>
+                <td>Enrolled</td>
+                <td>{{ student.MSallotment }}</td>
+                <td>${{ student.DDallotment }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../static/js/dashboard.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+    <script src="../static/js/dashboard.js"></script>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends "requestmeal/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+|| Share A Swipe!
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Share a Swipe! Claim Allowance</h1>
+      <p class="lead my-3">
+        Claim your donated meal swipes and dining dollar by
+        transfering them to your NYU ID card.
+      </p>
+    </div>
+  </div>
+
+  <!-- <div class="starter-template"> -->
+    <div class="row align-items-md-stretch">
+      <div class="col">
+        <div class="h-100 p-5 bg-light border rounded-3">
+
+          <div class="row justify-content-center">
+            <div class="row"></div>
+            <div class="row">
+              <div class="col"></div>
+              <div class="col-8">
+
+                <div style='text-align: center'>
+
+                    <h2>Transfer Allowance to NYU ID</h2>
+                    <p>
+                      Claimed donations will be loaded to your NYU ID card, and may
+                      be redeemed just the same as purchased meal swipes and dining dollars.
+                    </p>
+                    <br>
+
+                    <div class="table-responsive">
+                      <table class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <!-- <th scope="col"></th> -->
+                            <th scope="col"></th>
+                            <th scope="col">Meal Swipes</th>
+                            <th scope="col">Dining Dollars</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
+                            <td><b>Fall 2022 Balance</b></td>
+                            {% for student in the_student %}                           
+                            <td>  {{student.MSallotment}} </td>
+                            <td>  {{student.DDallotment}}</td>
+                            {% endfor %}
+                          </tr>
+
+                          <tr>
+                            <td><br><b>Transfer Amount</b></td>
+                            <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
+                            <!-- use input range to limit inputs -->
+                            <td>
+                                <div class="form-floating">                            
+                                <label for="floatingMS" style='text-align: center'># Meal Swipes</label>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="form-floating">
+                                  <label for="floatingDD" style='text-align: center'>$0.00</label>
+                                </div>
+                            </td>
+                            
+                            <form method = "POST">
+                            {% csrf_token %}
+                            {{ a_form|crispy }}
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <a >
+                      <!-- <a class="w-100 btn btn-lg btn-secondary" role="button">Transfer</a> -->
+                      <!-- <button class="w-100 btn btn-lg btn-primary" type="submit" value='login' name='login'>Log in</button> -->
+                      <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Update</button>
+                    </div>
+                    </a>
+                  </form>
+                </div>
+
+
+              </div>
+              <div class="col"></div>
+            </div>
+            <div class="row"></div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

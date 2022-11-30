@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'meal.wsgi.application'
 
 
 #DATABASES = {
-#    'default': {
+ #   'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
 #        'NAME': 'B24 Design Project',
-#        'USER': 'postgres',
+ #       'USER': 'postgres',
 #        'PASSWORD': 'slambamwam',
-#        'HOST': '216.165.95.183',
+ #       'HOST': '100.33.10.6',
 #        'PORT': '5432',
 #    }
 #}
@@ -90,10 +90,10 @@ WSGI_APPLICATION = 'meal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'database1',
+        'NAME': 'thedatabase',
         'USER': 'postgres',
         'PASSWORD': 'nyueats',
-        'HOST': '127.0.0.1',
+       'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
@@ -134,9 +134,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

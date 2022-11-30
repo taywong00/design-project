@@ -22,6 +22,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('requestmeal/', include('requestmeal.urls')),
+    #path('requestmeal/register')
     path('requestmeal/login/', auth_views.LoginView.as_view(template_name = 'requestmeal/login.html'), name = 'login'),
     path('requestmeal/logout/', auth_views.LogoutView.as_view(template_name = 'requestmeal/logout.html'), name = 'logout'),
     path('admin/', admin.site.urls),

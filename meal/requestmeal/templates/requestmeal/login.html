@@ -1,15 +1,46 @@
+{% extends "requestmeal/base.html" %}
 {% load crispy_forms_tags %}
+{% block title %}
+|| Share A Swipe!
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block stylesheets %}
+<!-- <link href="../static/css/signin.css" rel="stylesheet"> -->
+<!-- <link href="../static/css/bootstrap-grid.css" rel="stylesheet"> -->
+{% endblock %}
+
+
 {% block content %}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Log In</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Login</button>
-            </div>
-        </form>
-    </div>
-{% endblock content %}
+
+<div class="container">
+    <!-- <div class="starter-template"> -->
+
+      <div class="row justify-content-center">
+        <br><br>
+        <div class="row"></div>
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Log In</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Login</button>
+                </div>
+            </form>
+          </div>
+          <div class="col-4"></div>
+        </div>
+        <div class="row"></div>
+      </div>
+
+    <!-- </div> -->
+  </div>
+
+{% endblock %}

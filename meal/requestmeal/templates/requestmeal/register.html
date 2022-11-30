@@ -1,5 +1,7 @@
 {% extends "requestmeal/base.html" %}
+
 {% load crispy_forms_tags %}
+
 {% block title %}
 || Share A Swipe! - Become a Member
 {% endblock %}
@@ -59,6 +61,9 @@
 
 {% block content %}
 
+<form method="POST">
+  {% csrf_token %}
+
 <div class="px-4 py-5 my-5 text-center">
   <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
   <h1 class="display-5 fw-bold">Become a Member</h1>
@@ -70,11 +75,13 @@
       an email with next steps. You can always check your enrollment status <a href="/sas_status">here</a>.
     </p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-primary btn-lg px-4 gap-3" href="{% url 'meal-menu'%}">Become a Member</button>
-      <a class="btn btn-sm btn-outline-secondary" href="{% url 'login'%}">Become a member</a>
+      <button type="button" class="btn btn-primary btn-lg px-4 gap-3" href="{% url 'login'%}">Become a Member</button>
+      <button class="btn btn-sm btn-outline-secondary" href="{% url 'login'%}" type="submit">Become a member!</button>
+    </form>
     </div>
   </div>
 </div>
+
 
 
 
