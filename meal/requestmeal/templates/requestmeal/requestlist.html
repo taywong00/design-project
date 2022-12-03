@@ -182,8 +182,8 @@
                 <form method="POST">
                 {% csrf_token %}
                 <input type="hidden" value="{{student.SID}}" name="SID">
-                <button class="btn btn-success" name="action" value="accept">Accept </button>
-                <button class="btn btn-danger" name="action" value="deny">Deny </button>
+                <button class="btn btn-success" name="action" value="accept" href="{% url 'meal-requestlist'%}">Accept </button>
+                <button class="btn btn-danger" name="action" value="deny" href="{% url 'meal-studentlist'%}">Deny </button>
                 </form>
               </td>
             </tr>

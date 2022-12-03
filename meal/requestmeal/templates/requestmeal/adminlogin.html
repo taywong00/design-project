@@ -1,0 +1,58 @@
+{% extends "requestmeal/base.html" %}
+
+{% block title %}
+|| Share A Swipe!
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block stylesheets %}
+<!-- <link href="../static/css/signin.css" rel="stylesheet"> -->
+<!-- <link href="../static/css/bootstrap-grid.css" rel="stylesheet"> -->
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <!-- <div class="starter-template"> -->
+
+      <div class="row justify-content-center">
+        <br><br>
+        <div class="row"></div>
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <form>
+              <h1 class="h3 mb-3 fw-normal">Please log into NYU</h1>
+              <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">NYU Email Address</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label>
+              </div>
+              <a href="{% url 'meal-adminpage'%}">
+                <!-- note: doesnt actually utilize log in form yet -->
+                <!-- <button class="w-100 btn btn-lg btn-primary" type="submit" value='login' name='login'>Log in</button> -->
+                <a href="{% url 'meal-adminpage'%}" class="w-100 btn btn-lg btn-primary" role="button">Log In</a>
+              </a>
+            </form>
+          </div>
+          <div class="col-4"></div>
+        </div>
+        <div class="row"></div>
+      </div>
+
+    <!-- </div> -->
+  </div>
+
+{% endblock %}

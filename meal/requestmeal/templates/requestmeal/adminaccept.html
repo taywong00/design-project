@@ -177,7 +177,9 @@
                   <tbody>
                     <tr>
                       <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
-                      <td>38,991</td>
+                      <td>{% for s in stuff %}
+                        {{ s.MS }}                       
+                        {% endfor %}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -191,7 +193,9 @@
                   <tbody>
                     <tr>
                       <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
-                      <td>$50,021.09</td>
+                      <td>${% for s in stuff %}
+                        {{ s.DD }}                       
+                        {% endfor %}</td>
                     </tr>
                   </tbody>
                 </table>

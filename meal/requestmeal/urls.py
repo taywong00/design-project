@@ -13,4 +13,6 @@ urlpatterns = [
     path('claim/', views.claim, name='meal-claim'),
     path('requestlist/', views.requestlist, name='meal-requestlist'),
     path('studentlist/', views.studentlist, name='meal-studentlist'),
+    path('adminaccept/', views.adminaccept, name='meal-adminaccept'),
+    path('adminlogin/', views.adminlogin, name='meal-adminlogin'),
 ]

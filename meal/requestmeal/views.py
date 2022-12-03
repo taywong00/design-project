@@ -14,7 +14,7 @@ def home(request):
     return render(request, 'requestmeal/home.html')
 
 def about(request):
-    return render(request, 'requestmeal/test.html')
+    return render(request, 'requestmeal/about.html')
 
 def register(request):
     if request.method == 'POST':  
@@ -29,6 +29,9 @@ def register(request):
 @login_required
 def menu(request):
     the_student = Student.objects.filter(user_id = request.user.id)
+    index = request.user.email.index("@")
+    net_id = request.user.email[:index]
+    the_student.update(SID= net_id)
     return render(request, 'requestmeal/menu.html',{'the_student' : the_student})
 
 
@@ -109,9 +112,9 @@ def requestlist(request):
     if request.method == 'POST':
         acc = request.POST.get("action") 
         if acc == "accept":
-            Student.objects.filter(user_id = 12).update(MSallotment= 666)
+            Student.objects.filter(SID = request.POST.get("SID")).update(access = 2)
         elif acc == "deny":
-            Student.objects.filter(SID = request.POST.get("SID")).update(access= 0)
+            Student.objects.filter(SID = request.POST.get("SID")).update(access = 0)
         #if request.POST.get('access'):
             #s = request.POST.get('access')
             #s.save()
@@ -124,3 +127,11 @@ def studentlist(request):
         if each.access == 1:
             num += 1
     return render(request, 'requestmeal/studentlist.html', {'list': list, 'num': num})
+
+def adminaccept(request):
+    stuff = AvaiableStuff.objects.all()
+
+    return render(request, 'requestmeal/adminaccept.html', {'stuff': stuff})
+
+def adminlogin(request):
+    return render(request, 'requestmeal/adminlogin.html')
