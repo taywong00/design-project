@@ -43,3 +43,8 @@ def create_student(sender, instance, created, **kwargs):
 class RequestAmount(models.Model):
     MS = models.IntegerField()
     DD = models.FloatField()
+
+class DonateAmount(models.Model):
+    MS = models.IntegerField()
+    DD = models.FloatField()
+    netid = models.CharField(max_length= 50)

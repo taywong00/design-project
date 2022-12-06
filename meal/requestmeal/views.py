@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 #from django.contrib.auth.forms import UserCreationForm
-from .forms import RegistrationForm, ClaimForm
+from .forms import RegistrationForm, ClaimForm, DonationForm
 from django.views.generic import CreateView
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -110,7 +110,7 @@ def requestlist(request):
         if each.access == 1:
             num += 1
     if request.method == 'POST':
-        acc = request.POST.get("action") 
+        acc = request.POST.get("action")
         if acc == "accept":
             Student.objects.filter(SID = request.POST.get("SID")).update(access = 2)
         elif acc == "deny":
@@ -129,9 +129,22 @@ def studentlist(request):
     return render(request, 'requestmeal/studentlist.html', {'list': list, 'num': num})
 
 def adminaccept(request):
+    list = Student.objects.all()
+    num = 0
+    for each in list:
+        if each.access == 1:
+            num += 1
     stuff = AvaiableStuff.objects.all()
-
-    return render(request, 'requestmeal/adminaccept.html', {'stuff': stuff})
+    if request.method == 'POST':
+        a_form = DonationForm(request.POST)
+        a = request.POST.get('MS')
+        b = request.POST.get('DD')
+        c = request.POST.get('netid')
+        Student.objects.filter(SID = c).update(MSallotment= a)
+        Student.objects.filter(SID = c).update(DDallotment= b)
+    else:
+        a_form = DonationForm()
+    return render(request, 'requestmeal/adminaccept.html', {'a_form': a_form,'stuff': stuff, 'num': num})
 
 def adminlogin(request):
     return render(request, 'requestmeal/adminlogin.html')
