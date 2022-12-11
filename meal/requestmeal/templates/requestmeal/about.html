@@ -9,12 +9,17 @@
 
 {% block content %}
 
-<div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+<div class="p-4 p-md-5 mb-4 text-bg-dark" style='border-bottom-right-radius:5px; border-bottom-left-radius:5px;'>
+  <div class="container">
   <div class="col-md-6 px-0">
     <h1 class="display-4 fst-italic">Share A Swipe!</h1>
     <p class="lead my-3">[Caption about the program, and we'll spend the rest of this page with program info.]</p>
   </div>
+  </div>
 </div>
+
+
+<div class="container">
 
 <div class="row g-5">
   <div class="col-md-8">
@@ -92,9 +97,11 @@ Right. You're right.
     <div class="position-sticky" style="top: 2rem;">
       <div class="p-4 mb-3 bg-light rounded">
         <h4 class="fst-italic">Sign Up or Log In</h4>
-        <p class="mb-0">
-          Register to become a member, or log in to access your Share A Swipe account details.
-        </p>
+        <div class="container p-2">
+          <p class="mb-0">
+            Register to become a member, or log in to access your Share A Swipe account details.
+          </p>
+        </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <a href="{% url 'login'%}" class="btn btn-primary me-md-2" role="button">Log In</a>
           <a href="{% url 'meal-register'%}" class="btn btn-primary me-md-2" role="button">Sign Up</a>
@@ -105,9 +112,21 @@ Right. You're right.
       <div class="p-4">
         <h4 class="fst-italic">Additional Help & Resources</h4>
         <ol class="list-unstyled">
-          <li><a href="#">Resource 1</a></li>
-          <li><a href="#">Resource 2</a></li>
-          <li><a href="#">Resource 3</a></li>
+          <!-- <br> -->
+          <li class='p-2'>
+            <a style='font-weight: bold;' href="https://www.nyu.edu/students/student-information-and-resources/courtesy-meals.html">NYU Courtesy Meals</a>
+            <br> An NYU-based Emergency Food Assistance program.
+          </li>
+
+          <li class='p-2'>
+            <a style='font-weight: bold;' href="https://www.collegestudentpantry.org/">College Student Pantry</a>
+            <br> Any NYC college student, graduate or undergraduate, is eligible to use this food pantry.
+          </li>
+
+          <li class='p-2'>
+            <a style='font-weight: bold;' href="https://www.fns.usda.gov/snap/students">SNAP Benefits</a>
+            <br> The Supplemental Nutrition Assistance Program (SNAP) is a federally funded nutrition assistance program.
+          </li>
         </ol>
       </div>
 
@@ -119,7 +138,7 @@ Right. You're right.
             <div class="mb-1 text-muted">
             Meet the team and learn more about how our solution aims to solve food indescurity at NYU. </div>
 
-            <a href="#" class="stretched-link">Go to whitepapers. ></a>
+            <a href="https://www.canva.com/design/DAE_z6h9Eps/QvSrsOk7RHwBm5LIjXMU-A/view?utm_content=DAE_z6h9Eps&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" class="stretched-link">Go to whitepapers. ></a>
           </div>
           <div class="col-auto d-none d-lg-block">
 
@@ -128,6 +147,7 @@ Right. You're right.
       </div>
     </div>
   </div>
+</div>
 </div>
 
 

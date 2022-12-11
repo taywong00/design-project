@@ -61,6 +61,14 @@
 
 {% block content %}
 
+<div class="p-4 p-md-5 mb-4 text-bg-dark" style='border-bottom-right-radius:5px; border-bottom-left-radius:5px;'>
+  <div class="container">
+  <div class="col-md-6 px-0">
+    <h1 class="display-4 fst-italic">Become a Member of Share a Swipe</h1>
+    <p class="lead my-3">[Caption about the program, and we'll spend the rest of this page with program info.]</p>
+  </div>
+  </div>
+</div>
 
 <div class="container">
     <!-- <div class="starter-template"> -->
@@ -70,7 +78,7 @@
         <div class="row"></div>
         <div class="row">
           <div class="col-3"></div>
-          <div class="col-6">
+          <div class="col-6 h-100 p-5 bg-light border rounded-3">
 
 
             <form method="POST">
@@ -97,7 +105,7 @@
 
 
             <br><br>
-            <small> Dont have an account yet? <a href="{% url 'meal-register'%}">Sign up here.</a></small>
+            <small> Already have an account? <a href="{% url 'login'%}">Log in here.</a></small>
 
           </div>
           <div class="col-3"></div>

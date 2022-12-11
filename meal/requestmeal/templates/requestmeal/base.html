@@ -81,7 +81,7 @@
   <body>
 
 
-    <div class="container">
+    <!-- <div class="container"> -->
       <header class="blog-header lh-1 py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
@@ -107,8 +107,12 @@
         </div>
       </header>
 
-      <div class='container'>
+      <!-- <div class='container'> -->
         <nav class="navbar navbar-expand-lg" style="background-color: #5b2e88;">
+          <div class='container'>
+        <nav class="navbar navbar-expand-lg" style="background-color: #5b2e88;">
+          <div class="col-3">
+          </div>
           <div class="container-fluid">
             <!-- <a class="navbar-brand" href="#">NYU Eats Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,7 +122,7 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- Locations & Menus -->
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a style='color:white' class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Locations & Menus
                   </a>
                   <ul class="dropdown-menu">
@@ -130,7 +134,7 @@
                 </li>
                 <!-- Events & Special Offers -->
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a style='color:white' class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Events & Special Offers
                   </a>
                   <ul class="dropdown-menu">
@@ -141,7 +145,7 @@
                 </li>
                 <!-- Meal Plans -->
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a style='color:white' class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Meal Plans
                   </a>
                   <ul class="dropdown-menu">
@@ -155,7 +159,7 @@
                 </li>
                 <!-- Wellness & Sustainability -->
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a style='color:white' class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Wellness & Sustainability
                   </a>
                   <ul class="dropdown-menu">
@@ -188,7 +192,7 @@
                 </li> -->
                 <!-- About Us -->
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a style='color:white' class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     About Us
                   </a>
                   <ul class="dropdown-menu">
@@ -203,11 +207,16 @@
               </ul>
             </div>
           </div>
-        </nav>
-      </div>
-    </div>
 
-    <main class="container">
+          <div class="col-3">
+          </div>
+        </nav>
+      </nav>
+
+      <!-- </div> -->
+
+    <!-- <main class="container"> -->
+    <main>
 
       {% block content %}
 
@@ -224,6 +233,8 @@
         <p style='text-align:center'><small>Powered by <a href="https://github.com/taywong00/design-project">B24</a>.</small></p>
       </div>
     </footer>
+
+    <br><br><br><br><br><br><br><br><br>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
