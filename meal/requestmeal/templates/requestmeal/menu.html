@@ -10,14 +10,22 @@
 
 {% block content %}
 
+
+<div class="p-4 p-md-5 mb-4 text-bg-dark" style='border-bottom-right-radius:5px; border-bottom-left-radius:5px;'>
+  <div class="container">
+  <div class="col-md-6 px-0">
+    <h1 class="display-4 fst-italic">Welcome back to Share A Swipe!</h1>
+    <p class="lead my-3">[Caption about the program, and we'll spend the rest of this page with program info.]</p>
+  </div>
+  </div>
+</div>
+
+
+
+
 <!-- THIS IS WHAT SHOULD BE LOADED IF YOU HAVE ACCESS (ACCESS LEVEL 2) -->
 
 <div class="container">
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Welcome back to Share A Swipe!</h1>
-    </div>
-  </div>
 
     <div class="row align-items-md-stretch justify-content-start">
       <div class="col-md-6">
@@ -77,59 +85,21 @@
 <!-- THIS IS WHAT SHOULD BE LOADED IF YOU DO NOT HAVE ACCESS (ACCESS LEVEL 0,1) -->
 
 <div class="container">
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Welcome back to Share A Swipe!</h1>
-    </div>
-  </div>
 
     <div class="row align-items-md-stretch justify-content-start">
-      <div class="col-md-6">
+      <div class="col-md-2"> </div>
+      <div class="col-md-8 align-middle">
         <div class="h-100 p-5 bg-light border rounded-3">
-          <!-- use {{semester}} to fill in semester-->
-          <h2>Your Remaining Allowance Balance - Fall 2022</h2>
-          <!-- <br> -->
-          <p>This is the total number of donated meal swipes and
-            dining dollars that you have for the remainder of the semester.
+          <h2>Sorry, you do not currently have access to Share A Swipe.</h2>
+          <p> You're request may be pending or denied. You may check back here at any time to review your status.
           </p>
           <br>
-          <div style='text-align: center'>
-            <div class="table-responsive">
-              <table class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">Meal Swipes</th>
-                    <th scope="col">Dining Dollars</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
-                    {% for student in the_student %}
-                    <td>  {{student.MSallotment}} </td>
-                    <td>  {{student.DDallotment}}</td>
-                    {% endfor %}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <small> In the meantime, feel free to read about the program <a href="{% url 'meal-about'%}">here.</a></small>
+          <br>
+        </div>
+      </div>
+      <div class="col-md-2"> </div>
 
-        </div>
-      </div>
-      <div class="col-md-6 align-middle">
-        <div class="h-100 p-5 bg-light border rounded-3">
-          <h2>Claim Allowance</h2>
-          <p>Claim your donated meal swipes and dining dollar by
-            transfering them to your NYU ID card.
-          </p>
-          <br>
-          <!-- <button class="btn btn-outline-secondary btn-lg" type="button">Claim</button> -->
-          {% for student in the_student %}
-          <a href="{% url 'meal-claim'%}" class="btn btn-outline-secondary btn-lg {% if student.access != 2 %}disabled {% endif %}" role="button">Claim</a>
-          {% endfor %}
-        </div>
-      </div>
     </div>
 </div>
 
