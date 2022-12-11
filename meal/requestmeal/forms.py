@@ -18,6 +18,7 @@ class ClaimForm(forms.ModelForm):
     class Meta:
         model = RequestAmount
         fields = ['MS', 'DD']
+        labels = {'MS': 'Meal Swipes', 'DD': 'Dining Dollars'}
 
 class RequestForm(forms.ModelForm):
     class Meta:
