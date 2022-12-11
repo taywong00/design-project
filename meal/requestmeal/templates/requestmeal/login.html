@@ -30,10 +30,14 @@
                     <legend class="border-bottom mb-4">Log In to Share A Swipe</legend>
                     {{ form|crispy }}
                 </fieldset>
+                <br>
                 <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Login</button>
+                    <button class="btn btn-primary me-md-2" type="submit" style='text-align:right'>Login</button>
                 </div>
             </form>
+            <br>
+            <small> Dont have an account yet? <a href="{% url 'meal-register'%}">Sign up here.</a></small>
+
           </div>
           <div class="col-4"></div>
         </div>
