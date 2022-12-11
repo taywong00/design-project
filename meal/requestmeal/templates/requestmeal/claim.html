@@ -9,17 +9,17 @@
 {% endblock %}
 
 {% block content %}
+<div class="p-4 p-md-5 mb-4 text-bg-dark" style='border-bottom-right-radius:5px; border-bottom-left-radius:5px;'>
+  <div class="col-md-6 px-0">
+    <h1 class="display-4 fst-italic">Share a Swipe! Claim Allowance</h1>
+    <p class="lead my-3">
+      Claim your donated meal swipes and dining dollar by
+      transfering them to your NYU ID card.
+    </p>
+  </div>
+</div>
 
 <div class="container">
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Share a Swipe! Claim Allowance</h1>
-      <p class="lead my-3">
-        Claim your donated meal swipes and dining dollar by
-        transfering them to your NYU ID card.
-      </p>
-    </div>
-  </div>
 
   <!-- <div class="starter-template"> -->
     <div class="row align-items-md-stretch">
@@ -55,7 +55,7 @@
                           <tr>
                             <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
                             <td><b>Fall 2022 Balance</b></td>
-                            {% for student in the_student %}                           
+                            {% for student in the_student %}
                             <td>  {{student.MSallotment}} </td>
                             <td>  {{student.DDallotment}}</td>
                             {% endfor %}
@@ -66,7 +66,7 @@
                             <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
                             <!-- use input range to limit inputs -->
                             <td>
-                                <div class="form-floating">                            
+                                <div class="form-floating">
                                 <label for="floatingMS" style='text-align: center'># Meal Swipes</label>
                                 </div>
                               </td>
@@ -75,7 +75,7 @@
                                   <label for="floatingDD" style='text-align: center'>$0.00</label>
                                 </div>
                             </td>
-                            
+
                             <form method = "POST">
                             {% csrf_token %}
                             {{ a_form|crispy }}

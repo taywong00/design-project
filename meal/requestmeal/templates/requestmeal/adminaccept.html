@@ -14,17 +14,17 @@
 
 {% block content %}
 
-<div class="container-fluid">
-
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Share a Swipe! Manager</h1>
-      <p class="lead my-3">
-        Manage student program enrollment, assign donation allowances, and view
-        data analyses and program statistics.
-      </p>
-    </div>
+<div class="p-4 p-md-5 mb-4 text-bg-dark" style='border-bottom-right-radius:5px; border-bottom-left-radius:5px;'>
+  <div class="col-md-6 px-0">
+    <h1 class="display-4 fst-italic">Share a Swipe! Manager</h1>
+    <p class="lead my-3">
+      Manage student program enrollment, assign donation allowances, and view
+      data analyses and program statistics.
+    </p>
   </div>
+</div>
+
+<div class="container-fluid">
 
 
   <div class="row">
@@ -178,7 +178,7 @@
                     <tr>
                       <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
                       <td>{% for s in stuff %}
-                        {{ s.MS }}                       
+                        {{ s.MS }}
                         {% endfor %}</td>
                     </tr>
                   </tbody>
@@ -194,7 +194,7 @@
                     <tr>
                       <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
                       <td>${% for s in stuff %}
-                        {{ s.DD }}                       
+                        {{ s.DD }}
                         {% endfor %}</td>
                     </tr>
                   </tbody>
@@ -208,7 +208,7 @@
                     <div class="col-sm-6">
                       {% csrf_token %}
                       {{ a_form|crispy }}
-                      
+
                   <button class="w-100 btn btn-primary btn-lg" type="submit">Donate</button>
                 </form>
               </div>
