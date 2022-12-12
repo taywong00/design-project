@@ -8,13 +8,25 @@ Junzhe Zhang (jz3709@nyu.edu) <br>
 ### Project repo
 https://github.com/taywong00/design-project
 
+### Installations
+To run the development server, Django is required.
+ ```shell
+$ pip install django
+ ```
+For more instructions on how to use Django, go to
+https://docs.djangoproject.com/en/4.1/
+
+
 ### Running the application
 To run the application on Windows, install Visual Studio Code.
 To run the application on Mac, install PyScripter.
+Make sure that in meal/meal/settings.py, the database configuration matches your database server information. PostgreSQL is recommended.
 Once the repository is cloned, go to `meal` folder and do the following command in the terminal:
 
  ```shell
- python manage.py runserver  
+ $ python manage.py makemigrations  
+ $ python manage.py migrate  
+ $ python manage.py runserver  
  ```
 
 ### Presentation 
