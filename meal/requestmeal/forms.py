@@ -29,5 +29,4 @@ class DonationForm(forms.ModelForm):
     class Meta:
         model = DonateAmount
         fields = ['MS', 'DD', 'netid']
-        labels = {'MS': 'Meal Swipes', 'DD': 'Dining Dollars'}
-
+        labels = {'MS': 'Meal Swipes', 'DD': 'Dining Dollars', 'netid': 'NetID'}

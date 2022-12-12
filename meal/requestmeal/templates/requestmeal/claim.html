@@ -42,6 +42,8 @@
                     <br>
 
                     <div class="table-responsive">
+
+
                       <table class="table table-bordered table-striped">
                         <thead>
                           <tr>
@@ -65,32 +67,51 @@
                             <td><br><b>Transfer Amount</b></td>
                             <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
                             <!-- use input range to limit inputs -->
-                            <td>
-                                <div class="form-floating">
-                                <label for="floatingMS" style='text-align: center'># Meal Swipes</label>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="form-floating">
-                                  <label for="floatingDD" style='text-align: center'>$0.00</label>
-                                </div>
-                            </td>
-
-                            <form method = "POST">
-                            {% csrf_token %}
-                            {{ a_form|crispy }}
                           </tr>
                         </tbody>
                       </table>
                     </div>
-                    <a >
-                      <!-- <a class="w-100 btn btn-lg btn-secondary" role="button">Transfer</a> -->
-                      <!-- <button class="w-100 btn btn-lg btn-primary" type="submit" value='login' name='login'>Log in</button> -->
-                      <div class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Update</button>
-                    </div>
-                    </a>
-                  </form>
+
+
+                      <table class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <!-- <th scope="col"></th> -->
+                            <th scope="col"></th>
+                            <th scope="col">Meal Swipes</th>
+                            <th scope="col">Dining Dollars</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
+                            <td><b>Fall 2022 Balance</b></td>
+                            {% for student in the_student %}
+                            <td>  {{student.MSallotment}} </td>
+                            <td>  {{student.DDallotment}}</td>
+                            {% endfor %}
+                          </tr>
+
+                          <tr>
+                            <td><br><b>Transfer Amount</b></td>
+                            <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
+                            <!-- use input range to limit inputs -->
+
+
+                          </tr>
+                        </tbody>
+                      </table>
+                      <form method = "POST">
+                      {% csrf_token %}
+                      {{ a_form|crispy }}
+                      <a>
+                        <!-- <a class="w-100 btn btn-lg btn-secondary" role="button">Transfer</a> -->
+                        <!-- <button class="w-100 btn btn-lg btn-primary" type="submit" value='login' name='login'>Log in</button> -->
+                        <div class="form-group">
+                          <button class="btn btn-outline-info" type="submit">Transfer</button>
+                        </div>
+                      </a>
+                    </form>
                 </div>
 
 
@@ -106,7 +127,6 @@
     </div>
 
   </div>
-</div>
 
 
 {% endblock %}

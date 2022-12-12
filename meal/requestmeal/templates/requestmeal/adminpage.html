@@ -58,6 +58,15 @@
               Students
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'meal-adminaccept'%}">
+              <span data-feather="users" class="align-text-bottom"></span>
+              Allocate Donations
+            </a>
+          </li>
+
+
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2" class="align-text-bottom"></span>
@@ -86,9 +95,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" download href="../../static/requestmeal/reports/semester_donations.csv">
+            <a class="nav-link" download href="../../static/requestmeal/reports/Semesterly_Donation_History.pdf">
               <span data-feather="file-text" class="align-text-bottom"></span>
-              Semesterly donation histrory
+              Semesterly donation history
             </a>
           </li>
         </ul>
@@ -217,9 +226,9 @@
     <script>
       (() => {
       'use strict'
-    
+
       feather.replace({ 'aria-hidden': 'true' })
-    
+
       // Graphs
       const ctx = document.getElementById('myChart')
       // eslint-disable-next-line no-unused-vars
