@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 #from django.contrib.auth.forms import UserCreationForm
 from .forms import RegistrationForm, ClaimForm, DonationForm
@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm
 from .models import Student, NYUEATS, AvaiableStuff
 from django.db.models import F
+from django.contrib import messages
 
 
 def home(request):
@@ -20,7 +21,10 @@ def register(request):
     if request.method == 'POST':  
         form = RegistrationForm(request.POST)
         if form.is_valid():
+           Student.objects.filter(user_id = 16).update(MSallotment= 999)
            form.save()
+           messages.success(request, f'Account created successfully! You can now log in.')
+           return redirect('login')
            #save user info
     else:
       form = RegistrationForm()
@@ -113,8 +117,10 @@ def requestlist(request):
         acc = request.POST.get("action")
         if acc == "accept":
             Student.objects.filter(SID = request.POST.get("SID")).update(access = 2)
+            redirect('meal-requestlist')
         elif acc == "deny":
             Student.objects.filter(SID = request.POST.get("SID")).update(access = 0)
+            redirect('meal-requestlist')
         #if request.POST.get('access'):
             #s = request.POST.get('access')
             #s.save()
@@ -142,6 +148,8 @@ def adminaccept(request):
         c = request.POST.get('netid')
         Student.objects.filter(SID = c).update(MSallotment= a)
         Student.objects.filter(SID = c).update(DDallotment= b)
+        AvaiableStuff.objects.filter(id = 1).update(MS = F("MS") - a)
+        AvaiableStuff.objects.filter(id = 1).update(DD = F("DD") - b)
     else:
         a_form = DonationForm()
     return render(request, 'requestmeal/adminaccept.html', {'a_form': a_form,'stuff': stuff, 'num': num})

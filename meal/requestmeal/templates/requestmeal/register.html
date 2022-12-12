@@ -86,8 +86,10 @@
 
               <!-- <div class="px-4 py-5 my-5 text-center"> -->
                 <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+                <fieldset>
                 <legend class="border-bottom mb-4">Become a Share a Swipe Member</legend>
                 {{ form|crispy }}
+                </fieldset>
                 <!-- <div class="col-lg-6 mx-auto"> -->
                   <!-- <p class="lead mb-4">
                     Submit a request to enroll in the Share A Swipe! Program.
@@ -97,7 +99,7 @@
                   <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> -->
                     <!-- <button type="button" class="btn btn-primary btn-lg px-4 gap-3" href="{% url 'login'%}">Become a Member</button> -->
                     <br>
-                    <a class="btn btn-primary me-md-2" href="{% url 'login'%}" type="button">Become a member!</a>
+                    <button class="btn btn-primary me-md-2" href="{% url 'login'%}" type="submit">Become a member!</button>
                   <!-- </div> -->
                 <!-- </div> -->
               <!-- </div> -->

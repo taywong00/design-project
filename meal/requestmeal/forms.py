@@ -4,7 +4,7 @@ from .models import Student, RequestAmount, DonateAmount
 from django.contrib.auth.forms import UserCreationForm
 
 class RegistrationForm(UserCreationForm):
-    email = forms.EmailField
+    #email = forms.EmailField
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
@@ -29,4 +29,5 @@ class DonationForm(forms.ModelForm):
     class Meta:
         model = DonateAmount
         fields = ['MS', 'DD', 'netid']
+        labels = {'MS': 'Meal Swipes', 'DD': 'Dining Dollars'}
 
