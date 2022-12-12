@@ -42,8 +42,7 @@
                     <br>
 
                     <div class="table-responsive">
-
-
+                  
                       <table class="table table-bordered table-striped">
                         <thead>
                           <tr>
@@ -61,46 +60,12 @@
                             <td>  {{student.MSallotment}} </td>
                             <td>  {{student.DDallotment}}</td>
                             {% endfor %}
-                          </tr>
-
-                          <tr>
-                            <td><br><b>Transfer Amount</b></td>
-                            <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
-                            <!-- use input range to limit inputs -->
                           </tr>
                         </tbody>
                       </table>
                     </div>
 
-
-                      <table class="table table-bordered table-striped">
-                        <thead>
-                          <tr>
-                            <!-- <th scope="col"></th> -->
-                            <th scope="col"></th>
-                            <th scope="col">Meal Swipes</th>
-                            <th scope="col">Dining Dollars</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
-                            <td><b>Fall 2022 Balance</b></td>
-                            {% for student in the_student %}
-                            <td>  {{student.MSallotment}} </td>
-                            <td>  {{student.DDallotment}}</td>
-                            {% endfor %}
-                          </tr>
-
-                          <tr>
-                            <td><br><b>Transfer Amount</b></td>
-                            <!-- use {{meal_swipes}} and {{dining_dollars}} to fill in table-->
-                            <!-- use input range to limit inputs -->
-
-
-                          </tr>
-                        </tbody>
-                      </table>
+                      
                       <form method = "POST">
                       {% csrf_token %}
                       {{ a_form|crispy }}
