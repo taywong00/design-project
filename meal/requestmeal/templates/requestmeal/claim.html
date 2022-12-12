@@ -42,7 +42,7 @@
                     <br>
 
                     <div class="table-responsive">
-                  
+
                       <table class="table table-bordered table-striped">
                         <thead>
                           <tr>
@@ -65,7 +65,9 @@
                       </table>
                     </div>
 
-                      
+                    <h4>Transfer Amount</h4>
+
+
                       <form method = "POST">
                       {% csrf_token %}
                       {{ a_form|crispy }}
